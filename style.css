@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+}
+
+.progress-bar{
+    margin-top: 15%;
+
+}
+
+.status{
+    margin-top: 38px;
+}
+
+.fill{
+    height: 100%;
+    width: 0;
+    background-color: rgb(34, 206, 106);
+}
+
+button{
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.95);
+}
