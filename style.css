@@ -1,3 +1,6 @@
+/* Progress bar */
+
+ 
 *{
     margin: 0;
     padding: 0;
@@ -8,11 +11,17 @@ body,
 html{
     height: 100%;
     width: 100%;
+    color: #fff;
 }
 
-.container{
+main{
+    height: 100%;
+    background-color: #111;
 }
 
+
+
+/* 
 .progress-bar{
     margin-top: 15%;
 
@@ -30,6 +39,45 @@ html{
 
 button{
     padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.95);
+} */
+
+
+
+
+/* Toggle button */
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.elem{
+    height: 15%;
+    width: 50%;
+    background-color: #222;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    border-radius: 15px;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+button{
+    background-color: royalblue;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
