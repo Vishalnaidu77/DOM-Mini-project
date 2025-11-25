@@ -30,17 +30,21 @@
 
 // Toggle Button
 
-let btns = document.querySelectorAll("button")
+// let btns = document.querySelectorAll("button")
 
-btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        if (btn.innerText == "Add Friend") {
-            btn.innerText = "Remove Friend"
-            btn.style.backgroundColor = "#777"
-        }
-        else{
-            btn.innerText = "Add Friend"
-            btn.style.backgroundColor = "royalblue"
-        }
-    })
-})
+// btns.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//         if (btn.innerText == "Add Friend") {
+//             btn.innerText = "Remove Friend"
+//             btn.style.backgroundColor = "#777"
+//         }
+//         else{
+//             btn.innerText = "Add Friend"
+//             btn.style.backgroundColor = "royalblue"
+//         }
+//     })
+// })
+
+
+
+// Event Bubbling

@@ -12,11 +12,11 @@ html{
     height: 100%;
     width: 100%;
     color: #fff;
+    background-color: #111;
 }
 
 main{
     height: 100%;
-    background-color: #111;
 }
 
 
@@ -50,7 +50,7 @@ button:active{
 
 
 /* Toggle button */
-
+/* 
 main{
     display: flex;
     flex-direction: column;
@@ -83,4 +83,33 @@ button{
 
 button:active{
     transform: scale(0.95);
+} */
+
+
+
+
+
+
+/* Event Bubbling */
+
+main{
+    background: linear-gradient(to right bottom, rgb(66, 66, 66), black);
+    padding: 20px;
+}
+
+section{
+    height: 100%;
+    width: 500px;
+    background-color: black;
+    margin: auto;
+}
+
+.all-reels{
+    height: 100%;
+    width: 100%;
+}
+
+.reel{
+    height: 100%;
+    width: 100%;
 }
