@@ -173,6 +173,11 @@ video{
     padding: 2px 6px;
     border: 1px solid white;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.bottom .user button:active{
+    transform: scale(0.95);
 }
 
 .right{
@@ -185,15 +190,10 @@ video{
     justify-content: center;
     align-items: center;
     padding: 30px;
-    gap: 15px;
+    gap: 25px;
     /* transform: translateX(100%); */
     /* background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.16)); */
 } 
-
-.right div{
-    height: 50px;
-    width: 50px;
-}
 
 .right i{
     pointer-events: none;
@@ -205,11 +205,20 @@ video{
     pointer-events: none;
 }
 
-.right div{
+.right > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+}
+
+.right > div:active{
+    .right h4{
+        transform: scale(1.1);
+    }
 }
 
 .love{
