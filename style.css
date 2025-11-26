@@ -198,6 +198,8 @@ video{
 .right i{
     pointer-events: none;
     font-size: 25px;
+    display: inline-block;
+    transform-origin: center center;
 }
 
 .right h6{
@@ -221,9 +223,24 @@ video{
     }
 }
 
+.not-love{
+    color: white;
+    animation: pop 180ms ease;
+}
+
+
 .love{
     color: red;
+    /* CSS-only pop animation when the filled heart is rendered */
+    animation: pop 180ms ease;
 }
+
+@keyframes pop{
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.2); }
+    100%{ transform: scale(1); }
+}
+
 
 .right h4{
     pointer-events: none;

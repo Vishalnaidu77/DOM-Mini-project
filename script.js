@@ -176,15 +176,15 @@ function render(){
                           <div class="user">
                               <img src="${elem.userProfile}" alt="">
                               <h4>${elem.username}</h4>
-                              <button class="follow" id="${idx}">${elem.isFollowed ? "Unfollow" : "Follow"}</button>
+                              <button class="follow" data-index="${idx}">${elem.isFollowed ? "Unfollow" : "Follow"}</button>
                           </div>
                           <div class="title">
                               <h4>${elem.caption}</h4>
                           </div>
                       </div>
                       <div class="right">
-                          <div class="like" id="${idx}">
-                              <h4 class="like-icon">${elem.isLiked ? '<i class="ri-heart-3-fill love"></i>' : '<i class="ri-heart-line"></i>'}</h4>
+                          <div class="like" data-index="${idx}">
+                              <h4 class="like-icon">${elem.isLiked ? '<i class="ri-heart-3-fill love"></i>' : '<i class="ri-heart-line not-love"></i>'}</h4>
                               <h6>${elem.likeCount}</h6>
                           </div>
                           <div class="comment">
@@ -208,25 +208,53 @@ function render(){
 render()
 
 allReels.addEventListener("click", (dets) => {
-  if (dets.target.className == 'like') {
-    if(!reels[dets.target.id].isLiked){
-      reels[dets.target.id].isLiked = true;
-      reels[dets.target.id].likeCount++;
-      render();
-    }else{
-      reels[dets.target.id].isLiked = false;
-      reels[dets.target.id].likeCount--;
-      render();
+  
+  // if (dets.target.classList.contains('like')) {
+  //   reels[dets.target.id].isLiked = !reels[dets.target.id].isLiked;
+  //   reels[dets.target.id].isLiked ? reels[dets.target.id].likeCount++ : reels[dets.target.id].likeCount--;
+  //   render()
+  // }
+
+  // if(dets.target.classList.contains('follow')){
+  //   reels[dets.target.id].isFollowed = !reels[dets.target.id].isFollowed;
+  //   render();
+  // }  
+
+
+  // Like event
+
+  const likeBtn = dets.target.closest(".like");
+  const followBtn = dets.target.closest(".follow")
+
+  if (likeBtn){
+    const likeIcon = likeBtn.childNodes[1];
+    const index = likeBtn.dataset.index;
+
+    reels[index].isLiked = !reels[index].isLiked;
+
+    if (reels[index].isLiked) {
+      likeIcon.innerHTML = `<i class="ri-heart-3-fill love"></i>`;
+      reels[index].likeCount++;
+    } else {
+      likeIcon.innerHTML = `<i class="ri-heart-line not-love"></i>`;
+      reels[index].likeCount--;
     }
   }
 
-  if(dets.target.className == "follow"){
-    if(!reels[dets.target.id].isFollowed){
-      reels[dets.target.id].isFollowed = true;
-      render();
-    }else{
-      reels[dets.target.id].isFollowed = false;
-      render();
-    }
-  }  
+  if(followBtn) {
+    const index = followBtn.dataset.index;
+    
+    reels[index].isFollowed = !reels[index].isFollowed;
+    reels[index].isFollowed ? followBtn.innerText = "Unfollow" : followBtn.innerText = "Follow";
+  }
 })
+
+
+// const like = document.querySelectorAll(".like")
+
+// like.forEach((elem) => {
+//   elem.addEventListener("click", (dets) => {
+//       reels[dets.target.id].isLiked = !reels[dets.target.id].isLiked;
+//       render();
+//     })
+// })
